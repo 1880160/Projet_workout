@@ -1,3 +1,9 @@
 [submodule "projet-backend"]
 	path = projet-backend
 	url = git@github.com:1880160/projet-backend.git
+[submodule "Projet_workout_wiki"]
+	path = Projet_workout_wiki
+	url = git@github.com:1880160/Projet_workout_wiki.git
+[submodule "Projet_workout_frontend"]
+	path = Projet_workout_frontend
+	url = git@github.com:1880160/Projet_workout_frontend.git
