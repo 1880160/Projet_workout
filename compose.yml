@@ -1,3 +1,24 @@
 networks:
-  app_network:
+  app_network: #completely useless here since no db yet and frontend is client-sided
     driver: bridge
+
+services:
+  project-workout-frontend:
+    build:
+      context: ./Projet_workout_frontend
+      target: runner
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8080:8080
+    networks:
+      - app_network
+  project-workout-backend:
+    build:
+      context: ./projet-backend
+    ports:
+      - 3000:3000
+    networks:
+      - app_network
+    environment:
+      JWT_TOKEN: ${JWT_TOKEN}
