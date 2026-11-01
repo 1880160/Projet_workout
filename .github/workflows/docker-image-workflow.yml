@@ -51,11 +51,11 @@ jobs:
           tags: |
             ghcr.io/${{ env.OWNER_LC }}/project-workout-frontend:latest
             ghcr.io/${{ env.OWNER_LC }}/project-workout-frontend:${{ github.sha }}
-      # - name: Build and push Docker frontend
-      #   uses: docker/build-push-action@v6
-      #   with:
-      #     context: ./Projet_workout_frontend
-      #     push: ${{ github.event_name != 'pull_request' }}
-      #     tags: |
-      #       ghcr.io/${{ env.OWNER_LC }}/project-workout-frontend:latest
-      #       ghcr.io/${{ env.OWNER_LC }}/Project-workout-frontend:${{ github.sha }}
+      - name: Build and push Docker backend
+        uses: docker/build-push-action@v6
+        with:
+          context: ./project-backend
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ghcr.io/${{ env.OWNER_LC }}/project-workout-backend:latest
+            ghcr.io/${{ env.OWNER_LC }}/project-workout-backend:${{ github.sha }}
