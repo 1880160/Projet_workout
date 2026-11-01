@@ -54,7 +54,7 @@ jobs:
       - name: Build and push Docker backend
         uses: docker/build-push-action@v6
         with:
-          context: ./project-backend
+          context: ./projet-backend
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
             ghcr.io/${{ env.OWNER_LC }}/project-workout-backend:latest
